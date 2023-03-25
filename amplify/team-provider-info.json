@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-openperksblog-dev-193724-authRole",
+      "UnauthRoleArn": "arn:aws:iam::475532333603:role/amplify-openperksblog-dev-193724-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::475532333603:role/amplify-openperksblog-dev-193724-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-openperksblog-dev-193724-deployment",
+      "UnauthRoleName": "amplify-openperksblog-dev-193724-unauthRole",
+      "StackName": "amplify-openperksblog-dev-193724",
+      "StackId": "arn:aws:cloudformation:us-west-2:475532333603:stack/amplify-openperksblog-dev-193724/9909c260-caad-11ed-a8ff-06cce571a28d",
+      "AmplifyAppId": "dgeipsi1dy4ef"
+    }
+  }
+}

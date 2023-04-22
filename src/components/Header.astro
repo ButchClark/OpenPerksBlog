@@ -1,25 +1,65 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import Navigation from '../components/Navigation.astro'
+import { SkipLinks } from 'accessible-astro-components'
+import { Icon } from 'astro-icon'
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+  <SkipLinks />
+  <Navigation>
+    <li class="menu-item">
+      <a href="/">Home</a>
+    </li>
+    <li class="menu-item">
+      <a href="/blog/">Blog</a>
+    </li>
+    <li class="menu-item has-dropdown">
+      <button aria-haspopup="true" aria-expanded="false">Documentation</button>
+      <ul class="dropdown-menu">
+        <li class="submenu-item">
+          <a href="/getting-started/">Getting Started</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/prerequisites/">Prerequisites</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/accessible-components">Now what?</a>
+        </li>
+      </ul>
+    </li>
+    <!-- li class="menu-item">
+       <a href="https://accessible-astro.dev" title="external link" rel="external noopener noreferrer">External Link</a>
+    </li -->
+    <li class="menu-item type-icon">
+      <a href="https://github.com/butchclark/openperks" title="Go to the GitHub page">
+        <Icon pack="ion" name="logo-github" />
+      </a>
+    </li>
+  </Navigation>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/outline' as *;
+
+  header {
+    .type-icon a {
+      display: block;
+
+      [astro-icon] {
+        margin-top: -4px;
+        width: 30px;
+
+        path {
+          fill: var(--action-color);
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+
+      &:hover {
+        [astro-icon] path {
+          fill: var(--action-color-state);
+        }
+      }
+    }
+  }
 </style>

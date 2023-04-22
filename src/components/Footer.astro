@@ -1,13 +1,18 @@
 ---
-const today = new Date();
+import CallToAction from './CallToAction.astro'
+
+const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+  <CallToAction />
+  <section class="py-8">
+    <div class="container">
+      <p>
+        &copy; {currentYear} - Butch Clark. Made with ❤️ by <a
+          href="https://github.com/butchclark">Butch Clark</a
+        >.
+      </p>
+    </div>
+  </section>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
-</style>

@@ -1,10 +1,9 @@
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from 'astro/config'
+import compress from 'astro-compress'
+import mdx from '@astrojs/mdx'
+import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
-});
+  integrations: [compress(), mdx(), tailwind()],
+})
